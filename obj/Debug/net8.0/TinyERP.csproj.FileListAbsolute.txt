@@ -1,0 +1,15 @@
+/home/aljulien/Documents/tinyERP/bin/Debug/net8.0/TinyERP
+/home/aljulien/Documents/tinyERP/bin/Debug/net8.0/TinyERP.deps.json
+/home/aljulien/Documents/tinyERP/bin/Debug/net8.0/TinyERP.runtimeconfig.json
+/home/aljulien/Documents/tinyERP/bin/Debug/net8.0/TinyERP.dll
+/home/aljulien/Documents/tinyERP/bin/Debug/net8.0/TinyERP.pdb
+/home/aljulien/Documents/tinyERP/obj/Debug/net8.0/TinyERP.GeneratedMSBuildEditorConfig.editorconfig
+/home/aljulien/Documents/tinyERP/obj/Debug/net8.0/TinyERP.AssemblyInfoInputs.cache
+/home/aljulien/Documents/tinyERP/obj/Debug/net8.0/TinyERP.AssemblyInfo.cs
+/home/aljulien/Documents/tinyERP/obj/Debug/net8.0/TinyERP.csproj.CoreCompileInputs.cache
+/home/aljulien/Documents/tinyERP/obj/Debug/net8.0/TinyERP.sourcelink.json
+/home/aljulien/Documents/tinyERP/obj/Debug/net8.0/TinyERP.dll
+/home/aljulien/Documents/tinyERP/obj/Debug/net8.0/refint/TinyERP.dll
+/home/aljulien/Documents/tinyERP/obj/Debug/net8.0/TinyERP.pdb
+/home/aljulien/Documents/tinyERP/obj/Debug/net8.0/TinyERP.genruntimeconfig.cache
+/home/aljulien/Documents/tinyERP/obj/Debug/net8.0/ref/TinyERP.dll
