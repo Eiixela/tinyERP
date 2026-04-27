@@ -3,6 +3,7 @@ using TinyERP.Services;
 
 InventoryManager inventory = new InventoryManager();
 SaleManager sales = new SaleManager();
+AnalyticsManager analytics = new AnalyticsManager(inventory, sales);
 
 string inputUser = "0";
 bool keepRunning = true;
@@ -15,7 +16,8 @@ while (keepRunning) {
 	Console.WriteLine("\n === TinyERP Main System ===");
 	Console.WriteLine("1. Inventory Management");
 	Console.WriteLine("2. Sales & Transactions");
-	Console.WriteLine("3. Exit");
+	Console.WriteLine("3. Analytics Dashboard");
+	Console.WriteLine("4. Exit");
 
 	Console.Write("> Select an option: ");
 	inputUser = Console.ReadLine() ?? "";
@@ -32,6 +34,10 @@ while (keepRunning) {
 			break ;
 
 		case "3":
+			analytics.DisplayDashboard();
+			break ;
+
+		case "4":
 			inventory.SaveData();
 			sales.SaveData();
 			keepRunning = false;

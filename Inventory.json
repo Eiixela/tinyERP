@@ -1,0 +1,37 @@
+[
+  {
+    "Id": 0,
+    "Name": "Ergonomic Chair",
+    "Price": 29.99,
+    "Category": "Furniture",
+    "Quantity": 40
+  },
+  {
+    "Id": 1,
+    "Name": "USB-C Hub",
+    "Price": 45.50,
+    "Category": "Electronics",
+    "Quantity": 3
+  },
+  {
+    "Id": 2,
+    "Name": "Gaming Mouse",
+    "Price": 59.99,
+    "Category": "Electronics",
+    "Quantity": 15
+  },
+  {
+    "Id": 3,
+    "Name": "Office Desk",
+    "Price": 150.00,
+    "Category": "Furniture",
+    "Quantity": 2
+  },
+  {
+    "Id": 4,
+    "Name": "Mechanical Keyboard",
+    "Price": 89.99,
+    "Category": "Electronics",
+    "Quantity": 12
+  }
+]

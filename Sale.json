@@ -1,0 +1,30 @@
+[
+  {
+    "Id": 0,
+    "Date": "2026-04-27T10:00:00+02:00",
+    "ProductName": "Ergonomic Chair",
+    "Quantity": 2,
+    "Total": 59.98
+  },
+  {
+    "Id": 1,
+    "Date": "2026-04-27T11:30:00+02:00",
+    "ProductName": "USB-C Hub",
+    "Quantity": 5,
+    "Total": 227.50
+  },
+  {
+    "Id": 2,
+    "Date": "2026-04-27T14:15:00+02:00",
+    "ProductName": "Gaming Mouse",
+    "Quantity": 1,
+    "Total": 59.99
+  },
+  {
+    "Id": 3,
+    "Date": "2026-04-27T15:45:00+02:00",
+    "ProductName": "USB-C Hub",
+    "Quantity": 2,
+    "Total": 91.00
+  }
+]
