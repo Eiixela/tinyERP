@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TinyERP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+60a4b499cbee356d18ed41d24bc6122ee4b9734f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8137857fd247739bcacdb16ecb98b6f649727a8b")]
 [assembly: System.Reflection.AssemblyProductAttribute("TinyERP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TinyERP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
