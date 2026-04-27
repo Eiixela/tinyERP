@@ -2,103 +2,114 @@
 using TinyERP.Services;
 
 InventoryManager inventory = new InventoryManager();
+SaleManager sales = new SaleManager();
 
 string inputUser = "0";
 bool keepRunning = true;
+bool keepRunningInventory = true;
+bool keepRunningSales = true;
 inventory.LoadData();
+sales.LoadData();
 
-while (keepRunning == true) {
-	Console.WriteLine("\n--- TinyERP Menu ---");
-	Console.WriteLine("1. List All Products");
-	Console.WriteLine("2. Add New Product");
-	Console.WriteLine("3. Delete Product");
-	Console.WriteLine("4. Edit Quantity");
-	Console.WriteLine("5. Report");
-	Console.WriteLine("6. Exit");
+while (keepRunning) {
+	Console.WriteLine("\n === TinyERP Main System ===");
+	Console.WriteLine("1. Inventory Management");
+	Console.WriteLine("2. Sales & Transactions");
+	Console.WriteLine("3. Exit");
+
 	Console.Write("> Select an option: ");
 	inputUser = Console.ReadLine() ?? "";
-	
-	switch (inputUser){
+
+	switch (inputUser) {
 		case "1":
-			inventory.ListProducts();
+			keepRunningInventory = true;
+			InventoryMenu();
 			break ;
 
 		case "2":
-			getInfoProduct(inventory);
-			break ;
-		
-		case "3":
-			deleteProduct(inventory);
-			break ;
-		
-		case "4":
-			EditQuantity(inventory);
-			break ;
-		
-		case "5":
-			inventory.Report();
+			keepRunningSales = true;
+			SalesMenu();
 			break ;
 
-		case "6":
+		case "3":
 			inventory.SaveData();
+			sales.SaveData();
 			keepRunning = false;
 			break ;
 
-		default:
-			Console.WriteLine("Invalid option.");
-			break ;
 	}
 }
 
-void EditQuantity(InventoryManager inventory) {
-	Console.WriteLine("\n--- Edit Quantity ---");
-	Console.WriteLine("Enter Product ID: ");
+void SalesMenu() {
 
-	if (int.TryParse(Console.ReadLine(), out int id)) {
-		Console.WriteLine("Enter New Quantity :");
-		if (int.TryParse(Console.ReadLine(), out int quantity))
-			inventory.EditQuantity(id, quantity);
+	while (keepRunningSales == true) {
+		Console.WriteLine("\n--- Sales Menu ---");
+		Console.WriteLine("1. View All Sales");
+		Console.WriteLine("2. Record New Sale");
+		Console.WriteLine("3. Exit");
+
+		Console.Write("> Select an option: ");
+		inputUser = Console.ReadLine() ?? "";
+
+		switch (inputUser) {
+			case "1":
+				sales.ListSales();
+				break;
+			
+			case "2":
+				UserInterface.recordSale(sales, inventory);
+				break;
+
+			case "3":
+				keepRunningSales = false;
+				break;
+
+		}
 	}
 }
 
-void deleteProduct(InventoryManager inventory) {
-	Console.WriteLine("\n--- Delete Product ---");
-	Console.WriteLine("Enter Product ID: ");
-	
-	if (int.TryParse(Console.ReadLine(), out int id))
-		inventory.DeleteProduct(id);
+void InventoryMenu () {
+
+	while (keepRunningInventory == true) {
+		Console.WriteLine("\n--- Inventory Menu ---");
+		Console.WriteLine("1. List All Products");
+		Console.WriteLine("2. Add New Product");
+		Console.WriteLine("3. Delete Product");
+		Console.WriteLine("4. Edit Quantity");
+		Console.WriteLine("5. Report");
+		Console.WriteLine("6. Exit");
+		Console.Write("> Select an option: ");
+		inputUser = Console.ReadLine() ?? "";
+
+		switch (inputUser){
+			case "1":
+				inventory.ListProducts();
+				break ;
+
+			case "2":
+				UserInterface.getInfoProduct(inventory);
+				break ;
+
+			case "3":
+				UserInterface.deleteProduct(inventory);
+				break ;
+
+			case "4":
+				UserInterface.EditQuantity(inventory);
+				break ;
+
+			case "5":
+				inventory.Report();
+				break ;
+
+			case "6":
+				keepRunningInventory = false;
+				break ;
+
+			default:
+				Console.WriteLine("Invalid option.");
+				break ;
+		}
+	}
 }
 
-void getInfoProduct(InventoryManager inventory) {
-	Console.WriteLine("\n--- Add New Product ---");
-
-	Console.WriteLine("Enter Product Name: ");
-	string name = Console.ReadLine() ?? "";
-
-	if (string.IsNullOrWhiteSpace(name)) {
-		Console.WriteLine("Please enter a valid Product Name");
-		return ;
-	}
-
-	Console.WriteLine("Enter Category (Electronics, Food, Furniture):");
-	string category = Console.ReadLine() ?? "";
-	if (string.IsNullOrWhiteSpace(category)) {
-		Console.WriteLine("Please enter a valid Category");
-		return ;
-	}
-
-	Console.WriteLine("Enter Quantity:");
-	if (!int.TryParse(Console.ReadLine(), out int quantity)) {
-		Console.WriteLine("Please enter a valid Quantity");
-		return ;
-	}
-
-	Console.WriteLine("Enter Product Price:");
-	if (!decimal.TryParse(Console.ReadLine(), out decimal price)) {
-		Console.WriteLine("Invalid price format.");
-		return;
-	}
-
-	inventory.AddProduct(name, price, category, quantity);
-	Console.WriteLine("[+] Product added successfully!");
-}

@@ -4,23 +4,22 @@ using System.IO;
 
 namespace TinyERP.Services {
 
-
 	public class InventoryManager { 
 		public List<Product> inventory = new List<Product>();
 		private int _nextId = 0;
 
 		public void SaveData() {
-			string fileName = "data.json";
+			string fileName = "Inventory.json";
 
 			var options = new JsonSerializerOptions { WriteIndented = true };
 			string jsonString = JsonSerializer.Serialize(inventory, options);
 
 			File.WriteAllText(fileName, jsonString);
-			Console.WriteLine("[i] Data saved to data.json");
+			Console.WriteLine("[i] Inventory saved to Inventory.json");
 		}
 
 		public void LoadData() {
-			string fileName = "data.json";
+			string fileName = "Inventory.json";
 
 			if (File.Exists(fileName)) {
 				string jsonString = File.ReadAllText(fileName);
